@@ -32,7 +32,14 @@ export class MovieDetails extends Component {
   };
   render() {
     const {
-      movieDetails: { title },
+      movieDetails: {
+        title,
+        release_date,
+        poster_path,
+        popularity,
+        overview,
+        genres,
+      },
       loading,
     } = this.state;
     const { movieId } = this.props.match.params;
@@ -45,7 +52,14 @@ export class MovieDetails extends Component {
           <h1>loaddddddssssss</h1>
         ) : (
           <div>
-            <MovieCard title={title} />
+            <MovieCard
+              title={title}
+              release_date={release_date}
+              poster_path={poster_path}
+              popularity={popularity}
+              overview={overview}
+              genres={genres}
+            />
             <AdditionalLinks />
 
             <Route

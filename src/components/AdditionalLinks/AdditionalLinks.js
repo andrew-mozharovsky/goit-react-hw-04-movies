@@ -6,28 +6,31 @@ const AdditionalLinks = props => {
     match: { url },
   } = props;
   return (
-    <ul>
-      <li>
-        <NavLink
-          exact
-          to={{
-            pathname: `${url}${routes.cast}`,
-          }}
-        >
-          Cast
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          exact
-          to={{
-            pathname: `${url}${routes.reviews}`,
-          }}
-        >
-          Reviews
-        </NavLink>
-      </li>
-    </ul>
+    <>
+      <h2>Additional information</h2>
+      <ul>
+        <li>
+          <NavLink
+            exact
+            to={{
+              pathname: `${url}${routes.cast}`,
+            }}
+          >
+            Cast
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            exact
+            to={{
+              pathname: `${url}${routes.reviews}`,
+            }}
+          >
+            Reviews
+          </NavLink>
+        </li>
+      </ul>
+    </>
   );
 };
 

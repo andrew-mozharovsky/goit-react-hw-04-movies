@@ -7,10 +7,15 @@ export class Cast extends Component {
   state = {
     moviesCast: [],
   };
+  // componentDidUpdate() {
+  //   const { movieId } = this.props;
+  //   searchMovieCast(movieId).then(r => this.setState({ moviesCast: r.cast }));
+  // }
   componentDidMount() {
     const { movieId } = this.props;
     searchMovieCast(movieId).then(r => this.setState({ moviesCast: r.cast }));
   }
+  async componentDidMount() {}
 
   render() {
     const { moviesCast } = this.state;
