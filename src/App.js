@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import Loader from 'react-loader-spinner';
 
 import routes from './routes';
 // import HomePage from './views/HomePage';
@@ -19,7 +20,17 @@ class App extends React.Component {
     return (
       <>
         <NavLinks />
-        <Suspense fallback={<h1>load....</h1>}>
+        <Suspense
+          fallback={
+            <Loader
+              className={'spinier'}
+              type="Oval"
+              color="#00BFFF"
+              height={50}
+              width={50}
+            />
+          }
+        >
           <Switch>
             <Route exact path={routes.home} component={HomePage} />
             <Route path={routes.moviesDetails} component={MovieDetails} />

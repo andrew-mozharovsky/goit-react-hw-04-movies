@@ -2,8 +2,11 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  
 }
 .moviesListItem {
+  
+  
   width: calc((100% - 60px) / 6);
 
   &:not(:nth-child(6n)) {
@@ -13,12 +16,21 @@
     margin-top: 20px;
   }
   text-align: center;
+  transition-property: transform;
+  transition-duration: 250ms;
+
+  &:hover{
+    
+    transform: scale(1.05);
+  }
 }
 .moviePoster {
+  
   border-radius: 20px;
   width: 100%;
 }
 .link {
+  
   text-decoration: none;
 }
 .movieTitle {
@@ -29,4 +41,5 @@
 }
 .section {
   padding-bottom: 40px;
+  margin-top: 20px;
 }

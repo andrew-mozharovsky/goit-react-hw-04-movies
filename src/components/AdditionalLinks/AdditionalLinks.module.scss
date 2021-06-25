@@ -2,10 +2,10 @@
   height: 34px;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+ 
 }
 .list_item {
-  margin-top: 10px;
+  
   font-size: 20px;
   font-weight: 600;
   &:not(:last-child) {
@@ -15,10 +15,23 @@
 .link {
   text-decoration: none;
   color: rgb(62, 0, 143);
+  transition-property: color;
+  transition-duration: 250ms;
+  &:hover{
+    color: tomato;
+  }
 }
 .activeLink {
   color: tomato;
 }
-.title {
-  margin-top: 20px;
+
+.containerContent{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center
+  
+}
+.title{
+  margin-right: 20px;
 }

@@ -16,14 +16,13 @@ export class Reviews extends Component {
     searchMovieReviews(movieId).then(r =>
       this.setState({ moviesReviews: r.results }),
     );
+  }
 
+  render() {
     window.scrollTo({
       top: document.documentElement.scrollHeight,
       behavior: 'smooth',
     });
-  }
-
-  render() {
     const { moviesReviews } = this.state;
 
     return (
@@ -40,7 +39,7 @@ export class Reviews extends Component {
             })}
           </ul>
         ) : (
-          <h2 className={styles.noReviews}>No reviews </h2>
+          <h2 className="unknown">No reviews </h2>
         )}
       </div>
     );

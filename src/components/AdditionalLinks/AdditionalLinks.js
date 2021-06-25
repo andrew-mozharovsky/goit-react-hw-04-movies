@@ -8,7 +8,7 @@ const AdditionalLinks = props => {
   } = props;
 
   return (
-    <div className="container">
+    <div className={`container ${styles.containerContent}`}>
       <h2 className={styles.title}>Additional information</h2>
       <ul className={styles.linkList}>
         <li className={styles.list_item}>

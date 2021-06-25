@@ -21,6 +21,10 @@ export class Cast extends Component {
     } catch (error) {
       console.log(error);
     }
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth',
+    });
   }
 
   render() {
@@ -29,7 +33,7 @@ export class Cast extends Component {
 
     return (
       <div className="container">
-        {moviesCast.length > 0 && (
+        {moviesCast.length > 0 ? (
           <ul className={styles.castList}>
             {moviesCast.map(({ name, cast_id, profile_path, character }) => {
               return (
@@ -47,6 +51,8 @@ export class Cast extends Component {
               );
             })}
           </ul>
+        ) : (
+          <h2 className="unknown">Unknown cast</h2>
         )}
       </div>
     );

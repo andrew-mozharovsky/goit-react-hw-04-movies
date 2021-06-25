@@ -12,7 +12,6 @@ import AdditionalLinks from '../components/AdditionalLinks';
 export class MovieDetails extends Component {
   static propTypes = {};
   state = {
-    loading: false,
     movieDetails: {},
   };
   async componentDidMount() {
@@ -30,6 +29,13 @@ export class MovieDetails extends Component {
   loading = value => {
     this.setState({ loading: value });
   };
+  handleGoBack = () => {
+    const { location, history } = this.props;
+    if (location.state && location.state.from) {
+      return history.push(location.state.from);
+    }
+    history.push(routes.home);
+  };
   render() {
     const {
       movieDetails: {
@@ -41,40 +47,39 @@ export class MovieDetails extends Component {
         genres,
         backdrop_path,
       },
-      loading,
     } = this.state;
     const { movieId } = this.props.match.params;
     const { url } = this.props.match;
+    // const { location, history } = this.props
+    // console.log(location.state.from)
 
     return (
       <>
-        {loading ? (
-          <h1>loaddddddssssss</h1>
-        ) : (
-          <div>
-            <MovieCard
-              title={title}
-              release_date={release_date}
-              poster_path={poster_path}
-              popularity={popularity}
-              overview={overview}
-              genres={genres}
-              backdrop_path={backdrop_path}
-            />
-            <AdditionalLinks />
+        <div>
+          <MovieCard
+            title={title}
+            release_date={release_date}
+            poster_path={poster_path}
+            popularity={popularity}
+            overview={overview}
+            genres={genres}
+            backdrop_path={backdrop_path}
+            goBack={this.handleGoBack}
+          />
 
-            <Route
-              exact
-              path={`${url}${routes.cast}`}
-              render={() => <Cast movieId={movieId} />}
-            />
-            <Route
-              exact
-              path={`${url}${routes.reviews}`}
-              render={() => <Reviews movieId={movieId} />}
-            />
-          </div>
-        )}
+          <AdditionalLinks />
+
+          <Route
+            exact
+            path={`${url}${routes.cast}`}
+            render={() => <Cast movieId={movieId} />}
+          />
+          <Route
+            exact
+            path={`${url}${routes.reviews}`}
+            render={() => <Reviews movieId={movieId} />}
+          />
+        </div>
       </>
     );
   }
