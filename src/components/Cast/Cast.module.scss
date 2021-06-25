@@ -1,0 +1,30 @@
+.castList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+.castListItem {
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  min-height: 300px;
+  width: calc((100% - 80px) / 8);
+  border-radius: 8px;
+  overflow: hidden;
+
+  &:not(:nth-child(8n)) {
+    margin-right: 10px;
+  }
+  &:not(:nth-child(-n + 8)) {
+    margin-top: 20px;
+  }
+  & img {
+    width: 100%;
+  }
+  text-align: center;
+}
+.name {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}

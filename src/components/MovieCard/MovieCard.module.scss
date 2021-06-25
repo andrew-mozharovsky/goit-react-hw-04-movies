@@ -1,0 +1,62 @@
+.cardContainer {
+  display: flex;
+  padding: 30px 10px;
+}
+.cardSection {
+  background-image: linear-gradient(
+    to right,
+    rgb(235, 235, 235) 150px,
+    rgba(236, 232, 231, 0.84) 100%
+  );
+}
+.poster {
+  border-radius: 8px;
+}
+.cardContent {
+  margin-left: 15px;
+  color: rgb(48, 47, 47);
+}
+.title {
+  font-size: 35px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.detail {
+  display: flex;
+  align-items: center;
+}
+.genresList {
+  display: flex;
+}
+.userScoreTitle {
+  margin-right: 10px;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.userScore {
+  font-size: 18px;
+  font-weight: 400;
+  color: tomato;
+}
+.genres {
+  margin-right: 10px;
+  font-size: 19px;
+  font-weight: 600;
+}
+.genresListItem {
+  font-size: 18px;
+  font-weight: 400;
+  color: tomato;
+  &:not(:last-child) {
+    margin-right: 7px;
+  }
+}
+.overviewTitle {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.overview {
+  font-size: 18px;
+  line-height: 1.3;
+}

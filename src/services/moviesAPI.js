@@ -43,7 +43,7 @@ export const searchMovieCast = async movieId => {
       `${BASE_URL}/movie/${movieId}/credits?api_key=${KEY}`,
     );
     const json = await response.json();
-    return json;
+    return json.cast;
   } catch (error) {
     console.log('Something  wrong');
     console.log(error);

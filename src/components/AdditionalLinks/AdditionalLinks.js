@@ -1,16 +1,20 @@
 import { NavLink, withRouter } from 'react-router-dom';
 import routes from '../../routes';
+import styles from './AdditionalLinks.module.scss';
 
 const AdditionalLinks = props => {
   const {
     match: { url },
   } = props;
+
   return (
-    <>
-      <h2>Additional information</h2>
-      <ul>
-        <li>
+    <div className="container">
+      <h2 className={styles.title}>Additional information</h2>
+      <ul className={styles.linkList}>
+        <li className={styles.list_item}>
           <NavLink
+            className={styles.link}
+            activeClassName={styles.activeLink}
             exact
             to={{
               pathname: `${url}${routes.cast}`,
@@ -19,8 +23,10 @@ const AdditionalLinks = props => {
             Cast
           </NavLink>
         </li>
-        <li>
+        <li className={styles.list_item}>
           <NavLink
+            className={styles.link}
+            activeClassName={styles.activeLink}
             exact
             to={{
               pathname: `${url}${routes.reviews}`,
@@ -30,7 +36,7 @@ const AdditionalLinks = props => {
           </NavLink>
         </li>
       </ul>
-    </>
+    </div>
   );
 };
 

@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { searchMovieReviews } from '../../services/moviesAPI';
 
+import styles from './Reviews.module.scss';
+
 export class Reviews extends Component {
-  static propTypes = {};
+  static propTypes = {
+    movieId: PropTypes.string,
+  };
   state = {
     moviesReviews: [],
   };
@@ -12,16 +16,33 @@ export class Reviews extends Component {
     searchMovieReviews(movieId).then(r =>
       this.setState({ moviesReviews: r.results }),
     );
+
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth',
+    });
   }
 
   render() {
     const { moviesReviews } = this.state;
+
     return (
-      <ul>
-        {moviesReviews.map(({ id, author }) => {
-          return <li key={id}>{author}</li>;
-        })}
-      </ul>
+      <div className="container">
+        {moviesReviews.length > 0 ? (
+          <ul className={styles.list}>
+            {moviesReviews.map(({ id, author, content }) => {
+              return (
+                <li key={id}>
+                  <h2 className={styles.authorTitle}>{`Author: ${author}`}</h2>
+                  <p className={styles.content}>{content}</p>
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <h2 className={styles.noReviews}>No reviews </h2>
+        )}
+      </div>
     );
   }
 }

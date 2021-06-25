@@ -1,0 +1,24 @@
+.linkList {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.list_item {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+.link {
+  text-decoration: none;
+  color: rgb(62, 0, 143);
+}
+.activeLink {
+  color: tomato;
+}
+.title {
+  margin-top: 20px;
+}

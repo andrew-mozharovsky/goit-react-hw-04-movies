@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { NavLink, Route } from 'react-router-dom';
+
+import { Route } from 'react-router-dom';
 
 import { searchMovieById } from '../services/moviesAPI';
 import Cast from '../components/Cast';
@@ -39,12 +39,12 @@ export class MovieDetails extends Component {
         popularity,
         overview,
         genres,
+        backdrop_path,
       },
       loading,
     } = this.state;
     const { movieId } = this.props.match.params;
-    const { url, path } = this.props.match;
-    const { location } = this.props;
+    const { url } = this.props.match;
 
     return (
       <>
@@ -59,6 +59,7 @@ export class MovieDetails extends Component {
               popularity={popularity}
               overview={overview}
               genres={genres}
+              backdrop_path={backdrop_path}
             />
             <AdditionalLinks />
 
@@ -80,4 +81,3 @@ export class MovieDetails extends Component {
 }
 
 export default MovieDetails;
-// reviews;

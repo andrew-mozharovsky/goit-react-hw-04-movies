@@ -1,0 +1,32 @@
+.moviesList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.moviesListItem {
+  width: calc((100% - 60px) / 6);
+
+  &:not(:nth-child(6n)) {
+    margin-right: 11px;
+  }
+  &:not(:nth-child(-n + 6)) {
+    margin-top: 20px;
+  }
+  text-align: center;
+}
+.moviePoster {
+  border-radius: 20px;
+  width: 100%;
+}
+.link {
+  text-decoration: none;
+}
+.movieTitle {
+  margin-top: 10px;
+  color: rgb(43, 43, 43);
+  font-size: 18px;
+  font-weight: 600;
+}
+.section {
+  padding-bottom: 40px;
+}

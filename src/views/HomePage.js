@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import { fetchMoviesTrend } from '../services/moviesAPI';
 import MoviesList from '../components/MoviesList';
 
-import PropTypes from 'prop-types';
-
 class HomePage extends Component {
   state = {
     trendMovies: [],

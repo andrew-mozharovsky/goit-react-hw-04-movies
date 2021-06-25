@@ -1,0 +1,25 @@
+.header {
+  height: 64px;
+}
+.header_content {
+  height: 100%;
+}
+.nav_list {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.list_item {
+  font-size: 20px;
+  font-weight: 600;
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.link {
+  text-decoration: none;
+}
+.activeLink {
+  color: tomato;
+}
