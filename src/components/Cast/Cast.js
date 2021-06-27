@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { searchMovieCast } from '../../services/moviesAPI';
 import defaultImage from '../../img/default-image.png';
-import { withRouter } from 'react-router-dom';
 
 import styles from './Cast.module.scss';
 
@@ -60,4 +59,4 @@ class Cast extends Component {
   }
 }
 
-export default withRouter(Cast);
+export default Cast;
