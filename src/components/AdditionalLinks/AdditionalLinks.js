@@ -1,4 +1,4 @@
-import { NavLink, withRouter } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import routes from '../../routes';
 import styles from './AdditionalLinks.module.scss';
 
@@ -19,9 +19,7 @@ const AdditionalLinks = props => {
             exact
             to={{
               pathname: `${url}${routes.cast}`,
-              state: {
-                from: location,
-              },
+              state: { ...location.state },
             }}
           >
             Cast
@@ -34,9 +32,7 @@ const AdditionalLinks = props => {
             exact
             to={{
               pathname: `${url}${routes.reviews}`,
-              state: {
-                from: location,
-              },
+              state: { ...location.state },
             }}
           >
             Reviews
@@ -47,4 +43,4 @@ const AdditionalLinks = props => {
   );
 };
 
-export default withRouter(AdditionalLinks);
+export default AdditionalLinks;

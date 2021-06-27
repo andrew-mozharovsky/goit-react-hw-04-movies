@@ -60,7 +60,10 @@ export class MovieDetails extends Component {
             goBack={this.handleGoBack}
           />
 
-          <AdditionalLinks />
+          <AdditionalLinks
+            location={this.props.location}
+            match={this.props.match}
+          />
 
           <Route
             exact
