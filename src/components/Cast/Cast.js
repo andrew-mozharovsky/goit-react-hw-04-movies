@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { searchMovieCast } from '../../services/moviesAPI';
 import defaultImage from '../../img/default-image.png';
+import { withRouter } from 'react-router-dom';
 
 import styles from './Cast.module.scss';
 
-export class Cast extends Component {
+class Cast extends Component {
   static propTypes = {
     movieId: PropTypes.string.isRequired,
   };
@@ -59,4 +60,4 @@ export class Cast extends Component {
   }
 }
 
-export default Cast;
+export default withRouter(Cast);

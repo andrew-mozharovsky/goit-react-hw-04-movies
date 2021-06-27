@@ -13,22 +13,20 @@ export class MovieDetails extends Component {
   static propTypes = {};
   state = {
     movieDetails: {},
+    loading: false,
   };
   async componentDidMount() {
     const { movieId } = this.props.match.params;
-    this.loading(true);
+    this.setState({ loading: true });
     try {
       this.setState({ movieDetails: await searchMovieById(movieId) });
     } catch (error) {
       console.error();
     } finally {
-      this.loading(false);
+      this.setState({ loading: false });
     }
   }
 
-  loading = value => {
-    this.setState({ loading: value });
-  };
   handleGoBack = () => {
     const { location, history } = this.props;
     if (location.state && location.state.from) {
@@ -50,8 +48,6 @@ export class MovieDetails extends Component {
     } = this.state;
     const { movieId } = this.props.match.params;
     const { url } = this.props.match;
-    // const { location, history } = this.props
-    // console.log(location.state.from)
 
     return (
       <>

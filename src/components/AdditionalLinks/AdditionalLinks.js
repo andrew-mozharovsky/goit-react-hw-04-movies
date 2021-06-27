@@ -5,6 +5,7 @@ import styles from './AdditionalLinks.module.scss';
 const AdditionalLinks = props => {
   const {
     match: { url },
+    location,
   } = props;
 
   return (
@@ -18,6 +19,9 @@ const AdditionalLinks = props => {
             exact
             to={{
               pathname: `${url}${routes.cast}`,
+              state: {
+                from: location,
+              },
             }}
           >
             Cast
@@ -30,6 +34,9 @@ const AdditionalLinks = props => {
             exact
             to={{
               pathname: `${url}${routes.reviews}`,
+              state: {
+                from: location,
+              },
             }}
           >
             Reviews
