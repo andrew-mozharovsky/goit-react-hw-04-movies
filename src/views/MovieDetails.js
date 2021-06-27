@@ -13,17 +13,14 @@ export class MovieDetails extends Component {
   static propTypes = {};
   state = {
     movieDetails: {},
-    loading: false,
   };
   async componentDidMount() {
     const { movieId } = this.props.match.params;
-    this.setState({ loading: true });
+
     try {
       this.setState({ movieDetails: await searchMovieById(movieId) });
     } catch (error) {
       console.error();
-    } finally {
-      this.setState({ loading: false });
     }
   }
 
